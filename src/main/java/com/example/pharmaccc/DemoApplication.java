@@ -19,3 +19,13 @@ public class DemoApplication {
         SpringApplication.run(DemoApplication.class, args);
     }
 }
+
+@Configuration
+public class DatabaseConfig {
+    @Bean
+    @Primary
+    @ConfigurationProperties(prefix = "spring.datasource")
+    public DataSource dataSource() {
+        return DataSourceBuilder.create().build();
+    }
+}
