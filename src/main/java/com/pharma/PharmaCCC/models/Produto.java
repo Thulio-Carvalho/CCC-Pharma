@@ -77,5 +77,33 @@ public class Produto {
 	public String getCodigo() {
 		return codigo;
 	}
-	
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public void setQuantidade(Integer quantidade) {
+		this.quantidade = quantidade;
+	}
+
+	public void setFabricante(String fabricante) {
+		this.fabricante = fabricante;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+
+	public void setPreco(Double preco) {
+		this.preco = preco;
+	}
+
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
+	}
+		
 }

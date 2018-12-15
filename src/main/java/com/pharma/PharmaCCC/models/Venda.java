@@ -40,4 +40,17 @@ public class Venda {
 	public Integer getValor() {
 		return valor;
 	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
+	public void setValor(Integer valor) {
+		this.valor = valor;
+	}
+
 }
