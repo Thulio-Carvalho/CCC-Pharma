@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/administrador")
 public class AdmimistradorController {
 	@RequestMapping(method = RequestMethod.GET)
-	public String produtoController() {
+	public String administradorController() {
 		return "Controller Administrador ok!";
 	}
 }

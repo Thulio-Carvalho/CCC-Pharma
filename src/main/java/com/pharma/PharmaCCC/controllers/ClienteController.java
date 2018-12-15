@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/cliente")
 public class ClienteController {
 	@RequestMapping(method = RequestMethod.GET)
-	public String produtoController() {
+	public String clienteController() {
 		return "Controller Cliente ok!";
 	}
 
