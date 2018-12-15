@@ -27,7 +27,9 @@ public class ProdutoController {
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public @ResponseBody List<Produto> getAllProdutos() {
-		List<Produto> produtos = produtoService.getAllClientes();
+		Produto produto = new Produto();
+		produtoService.save(produto);
+		List<Produto> produtos = produtoService.getAllProdutos();
 		return produtos;
 	}
 }
