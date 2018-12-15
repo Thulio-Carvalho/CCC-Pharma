@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>CCC Pharma</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="home_style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+</head>
+<body>
+    <nav id="Home-Bar">
+        <a>CCCPharma</a>
+        <a id="Login_button"><i class="fas fa-user"></i></a>
+        <a href="#" id="Register_button"><i class="far fa-id-card"></i></a>
+    </nav>
+    <div id="Login">
+        <div id="Block"> 
+            <a id="Exit_button"><i class="fas fa-plus-circle"></i></a>
+            <form id="Login_Form" class="Form">
+                <a>Username</a> <br>
+                <input type="text" placeholder ="Username"> <br>
+                <a>Password</a> <br>
+                <input type="password" placeholder ="Password"> <br>
+                <input type="submit" placeholder ="Send"> <br>
+            </form>
+
+            <form id="Register_Form" class="Form">
+                <a>Your E-Mail</a> <br>
+                <input type="text" placeholder ="Username"> <br>
+                <a>Username</a> <br>
+                <input type="text" placeholder ="Username"> <br>
+                <a>Password</a> <br>
+                <input type="password" placeholder ="Password"> <br>
+                <a>Confirm Password</a> <br>
+                <input type="password" placeholder ="Password"> <br>
+                <input type="submit" placeholder ="Send"> <br>
+            </form>
+
+            <form id="Add_Form" class="Form">
+                <a>Item Name</a> <br>
+                <input type="text" placeholder ="Username"> <br>
+                <a>Category</a> <br>
+                <input type="text" placeholder ="Category"> <br>
+                <a>Image</a> <br>
+                <input type="file" placeholder ="Image"> <br>
+                <a>Price</a> <br>
+                <input type="number" placeholder ="00.00"> <br>
+                <input type="submit" placeholder ="Confirm" id="add_sub"> <br>
+            </form>
+        </div>
+    </div>
+    <div id="Market-place">
+        <div id="side-bar"></div>
+        <div id="Mark">
+            <div class = "Item">
+                <a class ="Nome">Camisinha</a> 
+                <a class ="Categoria">Presevativo</a>
+                <img src="imagens/itens/camisinha.jpg" class="Ilustracao">
+                <a class= "Preco">por: R$ 11,70 </a>
+                <button type="submit" class="btn"> <i class="fas fa-cart-plus"></i> </button>
+            </div>
+
+        </div>
+    </div>
+    <div id="add_button" href="#"><i class="fas fa-plus-circle"></i></div>
+    <script src= "login.js"></script>
+    <script src= "create.js"></script>
+</body>
+</html>

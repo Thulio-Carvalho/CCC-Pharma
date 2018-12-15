@@ -1,0 +1,161 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#Home-Bar{
+    display: grid;
+    grid-template-rows: 20fr;
+    grid-template-columns: 18fr 1fr 1fr;
+
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(14, 167, 167);
+}
+
+#Home-Bar > a{
+    font-family: 'Lucida Sans', sans-serif;
+    color: linen;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+#Login{
+    display: none;
+    z-index: 1;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#Block {
+    background-color: rgb(250, 250, 250);
+    margin: 10% auto;
+    padding: 10px;
+    width: 30%;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.Form { display: none;}
+.Form > a{
+    font-family: 'Lucida Sans', sans-serif;
+    color: gray;
+    font-size: 20px;
+}
+
+.Form > input{
+    font-family: 'Lucida Sans', sans-serif;
+    color: gray;
+    font-size: 15px;
+    padding: 5px;
+    width: 50%;
+    margin: 10px;
+    border-radius: 15px;
+    border-style: solid;
+}
+
+.Form > input[type="submit"]{
+    color: white;
+    background-color: rgb(22, 197, 22);
+}
+
+.Form > input[type="submit"]:hover {
+    color: white;
+    background-color: rgb(54, 126, 54);
+}
+
+#Exit_button > i{
+    margin: auto 95%;
+    font-size: 20px;
+    transform: rotate(45deg);
+    color: red;
+}
+
+#Market-place{
+    display: grid;
+    grid-template-rows: 10fr; 
+    grid-template-columns: 2fr 8fr;
+    position: relative;
+}
+#Mark{
+    display: inline;
+}
+.Item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(250, 251, 253);
+    padding: 10px;
+    width: 20%;
+    height: 50%;
+    text-align: center;
+    border-style: solid;
+    border-color: rgb(14, 167, 167); 
+    border-radius: 5px;
+    float: left;
+    margin: 5px 5px;
+}
+
+.Item:hover {
+    transform: scale(1.1);
+}
+.Item > *{
+    margin-bottom: 10px;
+}
+.Item .Ilustracao{
+    width: 80%;
+    height: 20%;
+}
+
+.Item .Nome {
+    font-family: 'Trebuchet MS';
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+}
+
+.Item .Categoria {
+    font-family: 'Trebuchet MS';
+    color: grey;
+    font-size: 15px;
+}
+
+.Item .Preco{
+    font-size: 15px;
+    font-weight: 1000;
+    font-family: 'Trebuchet MS';
+}
+
+.Item .btn {
+    width: 100%;
+    height: 40px;
+    background-color: rgb(255, 62, 62);
+    border-style: none;
+    border-left: 6px solid red;
+    font-family: 'Lucida Sans';
+    font-size: 30px;
+    font-weight: 1000;
+}
+
+#add_button {
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    position: absolute;
+    margin: 10px 10px;
+}
+#add_button > i {
+    font-size: 58px;
+    color: red;
+}
+
+.Category {
+    border-style: none;
+    border-left: 6px solid red;
+    margin-bottom: 10px;
+}
