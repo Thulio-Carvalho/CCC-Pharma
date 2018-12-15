@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ClienteController {
 	@RequestMapping(method = RequestMethod.GET)
 	public String produtoController() {
-		return "Controller ok!";
+		return "Controller Cliente ok!";
 	}
 
 }

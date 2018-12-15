@@ -12,6 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class AdmimistradorController {
 	@RequestMapping(method = RequestMethod.GET)
 	public String produtoController() {
-		return "Controller ok!";
+		return "Controller Administrador ok!";
 	}
 }

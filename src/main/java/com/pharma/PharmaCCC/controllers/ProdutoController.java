@@ -12,6 +12,6 @@ public class ProdutoController {
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String produtoController() {
-		return "Controller ok!";
+		return "Controller Produto ok!";
 	}
 }
