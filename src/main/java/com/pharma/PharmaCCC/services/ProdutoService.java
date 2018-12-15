@@ -14,10 +14,10 @@ public class ProdutoService {
 	@Autowired
 	private ProdutoRepository produtoRepository;
 
-	public List<Produto> getAllClientes() {
+	public List<Produto> getAllProdutos() {
 		return this.produtoRepository.findAll();
 	}
-	public Produto getClienteById(Integer id) {	
+	public Produto getProdutoById(Integer id) {	
 		return this.produtoRepository.findById(id).get();
 	}
 	
@@ -25,11 +25,16 @@ public class ProdutoService {
 		this.produtoRepository.save(produto);
 	}
 	
-	public Produto update(Produto cliente, Integer id) {
-		Produto novoCliente = this.produtoRepository.findById(id).get();
+	public Produto update(Produto produto, Integer id) {
+		Produto novoProduto = this.produtoRepository.findById(id).get();
 	
-		novoCliente.setNome(cliente.getNome());
+		novoProduto.setNome(produto.getNome());
+		novoProduto.setCategoria(produto.getCategoria());
+		novoProduto.setCodigo(produto.getCodigo());
+		novoProduto.setFabricante(produto.getFabricante());
+		novoProduto.setQuantidade(novoProduto.getQuantidade());
+		novoProduto.setPreco(produto.getPreco());
 		
-		return novoCliente;
+		return novoProduto;
 	}
 }

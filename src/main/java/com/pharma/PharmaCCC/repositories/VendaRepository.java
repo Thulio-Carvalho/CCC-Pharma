@@ -1,8 +1,8 @@
 package com.pharma.PharmaCCC.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import com.pharma.PharmaCCC.models.Cliente;
+import com.pharma.PharmaCCC.models.Venda;
 
-public interface VendaRepository extends JpaRepository<Cliente, Integer>{
+public interface VendaRepository extends JpaRepository<Venda, Integer>{
 
 }
