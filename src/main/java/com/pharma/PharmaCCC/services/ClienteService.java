@@ -14,7 +14,9 @@ public class ClienteService {
 	@Autowired
 	private ClienteRepository clienteRepository;
 
-	
+	public List<Cliente> getAllClientes() {
+		return this.clienteRepository.findAll();
+	}
 	public Cliente getClienteById(Integer id) {
 		//Optional<Cliente> cliente = this.clienteRepository.findById(id);	
 		return this.clienteRepository.findById(id).get();
