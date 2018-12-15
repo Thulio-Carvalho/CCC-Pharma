@@ -11,7 +11,7 @@ import com.pharma.PharmaCCC.models.Cliente;
 public class ClienteService {
 	private ClienteRepository clienteRepository;
 	
-	public List<Cliente> getAllClientes() {
-		return this.clienteRepository.getAllClientes();
-	}
+//	public List<Cliente> getAllClientes() {
+//		return this.clienteRepository.getAllClientes();
+//	}
 }
