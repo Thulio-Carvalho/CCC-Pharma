@@ -10,7 +10,6 @@ import com.pharma.PharmaCCC.repositories.AdministradorRepository;
 
 @Service
 public class AdministradorService {
-	@Autowired
 	private AdministradorRepository administradorRepository;
 
 	public List<Administrador> getAllAdministradores() {

@@ -10,7 +10,6 @@ import com.pharma.PharmaCCC.repositories.CategoriaRepository;
 
 @Service
 public class CategoriaService {
-	@Autowired
 	private CategoriaRepository categoriaRepository;
 
 	public List<Categoria> getAllCategoria() {

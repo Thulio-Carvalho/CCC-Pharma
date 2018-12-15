@@ -11,7 +11,7 @@ import com.pharma.PharmaCCC.repositories.ProdutoRepository;
 
 @Service
 public class ProdutoService {
-	@Autowired
+
 	private ProdutoRepository produtoRepository;
 
 	public List<Produto> getAllProdutos() {

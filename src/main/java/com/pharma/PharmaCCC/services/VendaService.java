@@ -12,7 +12,6 @@ import com.pharma.PharmaCCC.repositories.VendaRepository;
 
 @Service
 public class VendaService {
-	@Autowired
 	private VendaRepository vendaRepository;
 
 	public List<Venda> getAllVendas() {

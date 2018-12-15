@@ -10,7 +10,6 @@ import com.pharma.PharmaCCC.models.Cliente;
 
 @Service
 public class ClienteService {
-	@Autowired
 	private ClienteRepository clienteRepository;
 
 	public List<Cliente> getAllClientes() {
