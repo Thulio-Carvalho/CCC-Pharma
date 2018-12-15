@@ -17,4 +17,24 @@ public class Administrador {
 	
 	@Column(name = "senha")
 	private String senha;
+	
+	public Administrador() {}
+	
+	public Administrador(Integer id, String nome, String senha) {
+		this.id = id;
+		this.nome = nome;
+		this.senha = senha;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
 }

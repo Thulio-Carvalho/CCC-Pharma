@@ -2,7 +2,12 @@ package com.pharma.PharmaCCC.models;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.Column;
 
 @Entity
@@ -10,7 +15,9 @@ import javax.persistence.Column;
 public class Categoria {
 	
 	@Id
+	@OneToMany(mappedBy="categoria")
 	@Column(name = "id_categoria")
+	@JsonManagedReference
 	private Integer id;
 	
 	@Column(name = "nome")
