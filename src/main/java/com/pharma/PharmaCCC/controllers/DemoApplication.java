@@ -1,4 +1,4 @@
-package com.example.phaguemenos;
+package com.pharma.PharmaCCC.controllers;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

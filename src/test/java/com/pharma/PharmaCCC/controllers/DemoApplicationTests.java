@@ -1,5 +1,4 @@
-package com.example.phaguemenos;
-
+package com.pharma.PharmaCCC.controllers;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
