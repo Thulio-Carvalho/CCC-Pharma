@@ -6,7 +6,7 @@
 #Home-Bar{
     display: grid;
     grid-template-rows: 20fr;
-    grid-template-columns: 18fr 1fr 1fr;
+    grid-template-columns: 13fr 5fr 1fr 1fr;
 
     width: 100%;
     padding: 10px;
@@ -20,6 +20,45 @@
     text-decoration: none;
 }
 
+#Login_button {
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    display: block;
+}
+
+#Register_button {
+    grid-column-start: 4;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    display: block;
+}
+
+#Logout_button {
+    grid-column-start: 4;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    display: none;
+}
+
+#Cart_button {
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    display: none;
+}
+
+#welcome {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    display: none;
+}
 #Login{
     display: none;
     z-index: 1;
@@ -92,7 +131,7 @@
     align-items: center;
     background-color: rgb(250, 251, 253);
     padding: 10px;
-    width: 20%;
+    width: 230px;
     height: 50%;
     text-align: center;
     border-style: solid;
@@ -134,7 +173,7 @@
 .Item .btn {
     width: 100%;
     height: 40px;
-    background-color: rgb(255, 62, 62);
+    background-color: rgb(252, 90, 90);
     border-style: none;
     border-left: 6px solid red;
     font-family: 'Lucida Sans';
@@ -142,20 +181,118 @@
     font-weight: 1000;
 }
 
+.Item .btn:hover {
+    border-left-width: 30px;
+    transition: border-left-width 500ms linear;
+}
+
 #add_button {
     bottom: 0;
     left: 0;
     z-index: 1;
-    position: absolute;
+    position: fixed;
     margin: 10px 10px;
+}
+
+#add_button:hover {
+    transform: scale(1.20);
 }
 #add_button > i {
     font-size: 58px;
     color: red;
 }
 
+#side-bar {
+    margin: 10px 10px;
+}
+
+#side-bar:hover {
+
+    border-right-style: solid;
+    border-right-color: rgb(14, 167,167);
+}
+
 .Category {
     border-style: none;
     border-left: 6px solid red;
-    margin-bottom: 10px;
+    font-size: 22px;
+    font-family: Open Sans,Roboto,sans-serif;
+    color: rgb(7, 7, 7);
+    height: 50px;
+    padding: 10px 10px;
+}
+
+.Category:hover {
+    --actual:rgb(14,167,167);
+    background-color: var(--actual);
+    transition: all 5000ms step-start;
+    color: rgb(255, 255, 255);
+}
+
+#Cart li {
+    display: grid;
+    grid-template-rows: 3f 1f;
+    grid-auto-columns: 1fr 1fr 3fr;
+    border-style: solid;
+    border-color: rgb(14, 167, 167);
+    margin: 10px 10px;
+    padding: 10px 10px;
+    font-family: Open Sans,Roboto,sans-serif;
+    text-align: center;
+}
+
+#Cart li:hover {
+    border-left-width: 50px;
+    transition: border-left-width 500ms linear;
+    transform: scale(1.01);
+}
+
+#Cart li i{
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 2;    
+    font-size: 58px;
+    color: red;
+}
+
+#Cart li h1{
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    color: rgb(245, 114, 114);
+}
+
+#Cart li h2{
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 2;
+}
+
+#Cart li a{
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    font-size: 36px;
+}
+
+#clear_button {
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    position: fixed;
+    margin: 10px 10px;
+}
+
+#clear_button:hover {
+    transform: rotate(-50deg);
+    transition: transform 500ms linear;
+}
+
+#clear_button > i {
+    font-size: 58px;
+    color: red;
 }
