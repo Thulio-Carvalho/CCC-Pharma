@@ -1,13 +1,13 @@
-package com.pharma.PharmaCCC;
+package com.pharma.PharmaCCC.controllers;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PharmaCccApplication {
+public class DemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PharmaCccApplication.class, args);
+		SpringApplication.run(DemoApplication.class, args);
 	}
 
 }
