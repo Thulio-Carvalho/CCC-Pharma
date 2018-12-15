@@ -45,6 +45,17 @@ public class Categoria {
 	public Integer getQuantidade() {
 		return quantidade;
 	}
-	
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public void setQuantidade(Integer quantidade) {
+		this.quantidade = quantidade;
+	}
 	
 }

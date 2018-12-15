@@ -13,10 +13,7 @@ import com.pharma.PharmaCCC.models.Cliente;
 public class ClienteService {
 	@Autowired
 	private ClienteRepository clienteRepository;
-	
-	public List<Cliente> getAllClientes() {
-		return this.clienteRepository.findAll();
-	}
+
 	
 	public Cliente getClienteById(Integer id) {
 		//Optional<Cliente> cliente = this.clienteRepository.findById(id);	
@@ -33,7 +30,6 @@ public class ClienteService {
 		novoCliente.setNome(cliente.getNome());
 		novoCliente.setSenha(cliente.getSenha());
 		
+		return novoCliente;
 	}
-	
-	
 }

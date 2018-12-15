@@ -40,4 +40,17 @@ public class Lote {
 	public String getProduto() {
 		return produto;
 	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public void setQuantidade(String quantidade) {
+		this.quantidade = quantidade;
+	}
+
+	public void setProduto(String produto) {
+		this.produto = produto;
+	}
+	
 }

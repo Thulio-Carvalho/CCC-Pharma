@@ -44,4 +44,21 @@ public class VendaItem {
 	public Double getValor() {
 		return valor;
 	}
+
+	public void setVenda(Integer venda) {
+		this.venda = venda;
+	}
+
+	public void setProduto(Integer produto) {
+		this.produto = produto;
+	}
+
+	public void setQuantidade(Integer quantidade) {
+		this.quantidade = quantidade;
+	}
+
+	public void setValor(Double valor) {
+		this.valor = valor;
+	}
+	
 }
