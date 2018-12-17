@@ -60,7 +60,7 @@ public class VendaController {
 			return ResponseEntity.notFound().build();
 		}
 		
-		Produto.delete(venda);
+		venda.delete(venda);
 		
 		return ResponseEntity.noContent().build();
 	}

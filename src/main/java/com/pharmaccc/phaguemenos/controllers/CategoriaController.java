@@ -6,6 +6,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.pharmaccc.phaguemenos.model.Categoria;
+import com.pharmaccc.phaguemenos.model.Produto;
 import com.pharmaccc.phaguemenos.model.Categoria;
 import com.pharmaccc.phaguemenos.services.CategoriaService;
 import com.pharmaccc.phaguemenos.services.CategoriaService;
@@ -53,5 +55,19 @@ public class CategoriaController {
 		}
 		return ResponseEntity.ok(produto);
 	}
+	
+	@DeleteMapping("/{id}")
+	public ResponseEntity<Void> remover(@PathVariable Long id) {
+		Venda venda = venda.getOne(id);
+		
+		if (venda == null) {
+			return ResponseEntity.notFound().build();
+		}
+		
+		venda.delete(venda);
+		
+		return ResponseEntity.noContent().build();
+	}
+	
 	
 }

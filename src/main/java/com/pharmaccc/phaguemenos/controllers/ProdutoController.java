@@ -62,13 +62,13 @@ public class ProdutoController {
 	
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Void> remover(@PathVariable Long id) {
-		Produto produto = Produto.getOne(id);
+		Produto produto = produto.getOne(id);
 		
 		if (produto == null) {
 			return ResponseEntity.notFound().build();
 		}
 		
-		Produto.delete(produto);
+		produto.delete(produto);
 		
 		return ResponseEntity.noContent().build();
 	}
