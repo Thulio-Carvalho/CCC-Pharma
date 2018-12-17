@@ -53,8 +53,8 @@ public class VendaController {
 	}
 	
 	@DeleteMapping("/{id}")
-	public ResponseEntity<Void> remover(@PathVariable Long id) {
-		Venda venda = venda.getOne(id);
+	public ResponseEntity<Void> remover(@PathVariable Integer id) {
+		Venda venda = venda.getVendaById(id);
 		
 		if (venda == null) {
 			return ResponseEntity.notFound().build();
