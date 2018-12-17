@@ -42,9 +42,10 @@ public class Produto {
 	
 	public Produto() {}
 	
-	public Produto(String nome, Integer quantidade, String fabricante, Double preco, String codigo) {
+	public Produto(String nome, Integer quantidade, Categoria categoria, String fabricante, Double preco, String codigo) {
 		this.nome = nome;
 		this.quantidade = quantidade;
+		this.categoria = categoria;
 		this.fabricante = fabricante;
 		this.preco = preco;
 		this.codigo = codigo;
