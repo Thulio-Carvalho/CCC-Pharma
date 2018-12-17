@@ -40,7 +40,8 @@ function getCat(){
 
 function getItems(){
 
-    fetch('http://localhost:8000/Items.json').then(response => {
+    fetch('https://phague-menos.herokuapp.com/produtos').then(response => {
+        console.log(response);
         return response.json();
     }).then(data => {
         let block = document.getElementById("Mark");
@@ -54,7 +55,14 @@ function getItems(){
                 <a class= "Preco">por: R$ ${Number(data[item].Preco).toFixed(2)} </a>
                 <button type="submit" class="btn"> <i class="fas fa-cart-plus"></i> </button>
             `;
-            
+
+            if(data[item].Quantidade == 0){
+                novo.children[4].disabled = true;
+                novo.children[4].innerHTML = `
+                    <a> Indisponivel </a>
+                    <i class="far fa-frown"></i>
+                `;
+            }
             let forma = {
                 nome:data[item].Nome,
                 categoria:data[item].Categoria,
@@ -62,7 +70,6 @@ function getItems(){
             };  
             
             novo.children[4].onclick = function (){
-                console.log("clique");
                 compras.push(forma);
                 localStorage.setItem("Items", JSON.stringify(compras));
             };

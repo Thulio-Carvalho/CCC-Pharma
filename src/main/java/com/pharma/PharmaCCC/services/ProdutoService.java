@@ -11,7 +11,7 @@ import com.pharma.PharmaCCC.repositories.ProdutoRepository;
 
 @Service
 public class ProdutoService {
-
+	@Autowired
 	private ProdutoRepository produtoRepository;
 
 	public List<Produto> getAllProdutos() {
@@ -29,7 +29,6 @@ public class ProdutoService {
 		Produto novoProduto = this.produtoRepository.findById(id).get();
 	
 		novoProduto.setNome(produto.getNome());
-		novoProduto.setCategoria(produto.getCategoria());
 		novoProduto.setCodigo(produto.getCodigo());
 		novoProduto.setFabricante(produto.getFabricante());
 		novoProduto.setQuantidade(novoProduto.getQuantidade());

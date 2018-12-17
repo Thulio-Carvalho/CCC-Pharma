@@ -1,12 +1,12 @@
-package com.pharma.PharmaCCC.services;
+package com.pharmaccc.phaguemenos.services;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.pharma.PharmaCCC.repositories.ClienteRepository;
-import com.pharma.PharmaCCC.models.Cliente;
+import com.pharmaccc.phaguemenos.model.Cliente;
+import com.pharmaccc.phaguemenos.repository.ClienteRepository;
 
 @Service
 public class ClienteService {
@@ -21,13 +21,13 @@ public class ClienteService {
 		return this.clienteRepository.findById(id).get();
 	}
 	
-	public void save(Cliente cliente) {
-		this.clienteRepository.save(cliente);
+	public Cliente add(Cliente cliente) {
+		return this.clienteRepository.save(cliente);
 	}
 	
-	public Cliente update(Cliente cliente, Integer id) {
+	public Cliente update(Integer id, Cliente cliente) {
 		Cliente novoCliente = this.clienteRepository.findById(id).get();
-	
+		
 		novoCliente.setNome(cliente.getNome());
 		novoCliente.setSenha(cliente.getSenha());
 		

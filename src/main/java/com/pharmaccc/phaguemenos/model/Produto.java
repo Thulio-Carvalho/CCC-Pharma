@@ -1,9 +1,11 @@
-package com.pharma.PharmaCCC.models;
+package com.pharmaccc.phaguemenos.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.Column;
 
@@ -12,6 +14,8 @@ import javax.persistence.Column;
 public class Produto {
 	
 	@Id
+	@GeneratedValue(generator = "increment")
+	@GenericGenerator(name = "increment", strategy = "increment")
 	@Column(name = "id_produto")
 	private Integer id;
 	
@@ -33,8 +37,7 @@ public class Produto {
 	
 	public Produto() {}
 	
-	public Produto(Integer id, String nome, Integer quantidade, String fabricante, Double preco, String codigo) {
-		this.id = id;
+	public Produto(String nome, Integer quantidade, String fabricante, Double preco, String codigo) {
 		this.nome = nome;
 		this.quantidade = quantidade;
 		this.fabricante = fabricante;
@@ -57,6 +60,7 @@ public class Produto {
 	public String getFabricante() {
 		return fabricante;
 	}
+
 
 	public Double getPreco() {
 		return preco;
@@ -81,7 +85,6 @@ public class Produto {
 	public void setFabricante(String fabricante) {
 		this.fabricante = fabricante;
 	}
-
 
 	public void setPreco(Double preco) {
 		this.preco = preco;

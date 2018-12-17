@@ -1,4 +1,4 @@
-package com.pharma.PharmaCCC.controllers;
+package com.pharma.PharmaCCC;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

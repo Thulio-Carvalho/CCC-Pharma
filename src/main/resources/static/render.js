@@ -2,7 +2,7 @@
 function render_bar(){
     let hbar = document.getElementById("Home-Bar");
     hbar.innerHTML = `     
-        <a href="index.html">CCCPharma</a>
+        <a href="Index.html">CCCPharma</a>
         <a id="Login_button"><i class="fas fa-user"></i></a>
         <a id="Register_button"><i class="far fa-id-card"></i></a>
         <a id="Cart_button" href="cart.html"><i class="fas fa-shopping-basket"></i></a>
@@ -40,7 +40,14 @@ function render_fb(){
                 <a>Nome do Item</a> <br>
                 <input type="text" placeholder ="Item"> <br>
                 <a>Categoria</a> <br>
-                <input type="text" placeholder ="Categoria"> <br>
+                <select name="Categorias">
+                    <option value="Medicamento">Medicamento</option>
+                    <option value="Cuidados Pessoais">Cuidados Pessoais</option>
+                    <option value="Cosméticos">Cosméticos</option>
+                    <option value="Alimentos">Alimentos</option>
+                </select>
+
+                <br>
                 <a>Codigo de Barras</a> <br>
                 <input type="text" placeholder ="Codigo de Barra"> <br>
                 <a>Preço</a> <br>
