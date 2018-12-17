@@ -45,4 +45,7 @@ public class UsuarioService {
 		return false;
 		
 	}
+	public List<Usuario> getUsuarioByNome(String nome) {
+		return this.usuarioRepository.findByNome(nome);
+	}
 }
