@@ -1,5 +1,7 @@
 package com.pharmaccc.phaguemenos.model;
 
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -7,28 +9,39 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Column;
 
 @Entity
-@Table(name = "tb_cliente")
-public class Usuario {
+@Table(name = "tb_categoria")
+public class Categoria {
+	
 	@Id
 	@GeneratedValue(generator = "increment")
 	@GenericGenerator(name = "increment", strategy = "increment")
-	@Column(name = "id_cliente")
+	@Column(name = "id_categoria")
 	private Integer id;
 	
 	@Column(name = "nome")
 	private String nome;
 	
-	@Column(name = "senha")
-	private String senha;
+	@Column(name = "desconto")
+	private Integer desconto;
 	
-	public Usuario() {}
+//	//@OneToMany(mappedBy = "categoria")
+//	private List<Produto> produtos;
 	
-	public Usuario(String nome, String senha) {
+	public Categoria() {}
+
+//	public List<Produto> getProdutos() {
+//		return produtos;
+//	}
+//
+//	public void setProdutos(List<Produto> produtos) {
+//		this.produtos = produtos;
+//	}
+
+	public Categoria(String nome, Integer desconto) {
 		this.nome = nome;
-		this.senha = senha;
+		this.desconto = desconto;
 	}
 
 	public Integer getId() {
@@ -39,8 +52,8 @@ public class Usuario {
 		return nome;
 	}
 
-	public String getSenha() {
-		return senha;
+	public Integer getDesconto() {
+		return desconto;
 	}
 
 	public void setId(Integer id) {
@@ -51,9 +64,9 @@ public class Usuario {
 		this.nome = nome;
 	}
 
-	public void setSenha(String senha) {
-		this.senha = senha;
+	public void setDesconto(Integer desconto) {
+		this.desconto = desconto;
 	}
-
 	
 }
+

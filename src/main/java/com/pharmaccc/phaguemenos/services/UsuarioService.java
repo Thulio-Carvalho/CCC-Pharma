@@ -33,4 +33,16 @@ public class UsuarioService {
 		
 		return novoUsuario;
 	}
+	
+	public boolean remover(Integer id) {
+		Usuario novoUsuario = this.usuarioRepository.findById(id).get();
+		
+		if(novoUsuario != null) {
+			this.usuarioRepository.deleteById(id);
+			return true;
+		}
+		
+		return false;
+		
+	}
 }

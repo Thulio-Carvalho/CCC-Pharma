@@ -29,6 +29,11 @@ public class ProdutoController {
 	@Autowired
 	ProdutoService produtoService;
 	
+//	@RequestMapping(method = RequestMethod.GET)
+//	public String produtoController() {
+//		return "Controller Produto ok!";
+//	}
+	
 	@GetMapping
 	public List<Produto> getAll() {
 		return this.produtoService.getAllProdutos();
@@ -62,15 +67,15 @@ public class ProdutoController {
 	
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Void> remover(@PathVariable Integer id) {
-		Produto produto = produtoService.getProdutoById(id);
+		boolean t = this.produtoService.remover(id);
 		
-		if (produto == null) {
+		if (!t) {
 			return ResponseEntity.notFound().build();
 		}
 		
-		produto.delete(produto);
-		
 		return ResponseEntity.noContent().build();
 	}
+	
+	
 	
 }

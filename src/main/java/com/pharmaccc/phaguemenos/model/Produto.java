@@ -3,9 +3,11 @@ package com.pharmaccc.phaguemenos.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
+
 
 import javax.persistence.Column;
 
@@ -24,6 +26,9 @@ public class Produto {
 	
 	@Column(name = "quantidade")
 	private Integer quantidade;
+	
+	@ManyToOne
+	private Categoria categoria;
 	
 	@Column(name = "fabricante")
 	private String fabricante;
@@ -92,10 +97,6 @@ public class Produto {
 
 	public void setCodigo(String codigo) {
 		this.codigo = codigo;
-	}
-
-	public void delete(Produto produto) {
-		// TODO DOUG DEVE IMPLEMENTAR
 	}
 		
 }

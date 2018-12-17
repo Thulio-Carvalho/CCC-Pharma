@@ -21,11 +21,16 @@ import com.pharmaccc.phaguemenos.model.Usuario;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/usuario")
+@RequestMapping("/cliente")
 public class UsuarioController {
 	
 	@Autowired
 	UsuarioService usuarioService;
+	
+//	@RequestMapping(method = RequestMethod.GET)
+//	public String clienteController() {
+//		return "Controller Cliente ok!";
+//	}
 	
 	@GetMapping
 	public List<Usuario> getAll() {
@@ -33,25 +38,25 @@ public class UsuarioController {
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Usuario> getProdutoById(@PathVariable Integer id){
-		Usuario usuario = this.usuarioService.getUsuarioById(id);
+	public ResponseEntity<Usuario> getUsuarioById(@PathVariable Integer id){
+		Usuario produto = this.usuarioService.getUsuarioById(id);
 		
-		if(usuario == null) {
+		if(produto == null) {
 			return ResponseEntity.notFound().build();
 		}
 		
-		return ResponseEntity.ok(usuario);
+		return ResponseEntity.ok(produto);
 	}
 	
 	@PostMapping
-	public ResponseEntity<Usuario> add(@Valid @RequestBody Usuario usuarioBody){
-		Usuario usuario = this.usuarioService.add(usuarioBody);
-		return ResponseEntity.ok(usuario);
+	public ResponseEntity<Usuario> add(@Valid @RequestBody Usuario clienteBody){
+		Usuario cliente = this.usuarioService.add(clienteBody);
+		return ResponseEntity.ok(cliente);
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<Usuario> update(@PathVariable Integer id, @Valid @RequestBody Usuario usuarioBody){
-		Usuario produto = this.usuarioService.update(id, usuarioBody);
+	public ResponseEntity<Usuario> update(@PathVariable Integer id, @Valid @RequestBody Usuario clienteBody){
+		Usuario produto = this.usuarioService.update(id, clienteBody);
 		if(produto == null) {
 			return ResponseEntity.notFound().build();
 		}
@@ -60,14 +65,14 @@ public class UsuarioController {
 	
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Void> remover(@PathVariable Integer id) {
-		Usuario usuario = usuarioService.getUsuarioById(id);
+		boolean t = this.usuarioService.remover(id);
 		
-		if (usuario == null) {
+		if (!t) {
 			return ResponseEntity.notFound().build();
 		}
 		
-		usuario.delete(usuario);
-		
 		return ResponseEntity.noContent().build();
 	}
+	
+
 }

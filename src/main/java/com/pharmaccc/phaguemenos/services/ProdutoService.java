@@ -36,4 +36,16 @@ public class ProdutoService {
 		}
 		return novoProduto;
 	}
+	
+	public boolean remover(Integer id) {
+		Produto novoProduto = this.produtoRepository.findById(id).get();
+		
+		if(novoProduto != null) {
+			this.produtoRepository.deleteById(id);
+			return true;
+		}
+		
+		return false;
+		
+	}
 }
