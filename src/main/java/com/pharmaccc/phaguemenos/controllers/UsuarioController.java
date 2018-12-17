@@ -21,16 +21,12 @@ import com.pharmaccc.phaguemenos.model.Usuario;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/cliente")
+@RequestMapping("/usuario")
 public class UsuarioController {
 	
 	@Autowired
 	UsuarioService usuarioService;
 	
-//	@RequestMapping(method = RequestMethod.GET)
-//	public String clienteController() {
-//		return "Controller Cliente ok!";
-//	}
 	
 	@GetMapping
 	public List<Usuario> getAll() {

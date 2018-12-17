@@ -9,7 +9,6 @@ import com.pharmaccc.phaguemenos.model.Usuario;
 
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer>{
-
-	List<Usuario> findAllByNome(String nome);
 	
+	List<Usuario> findAllByNome(String nome);
 }

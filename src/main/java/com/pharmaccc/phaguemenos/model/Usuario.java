@@ -24,11 +24,34 @@ public class Usuario {
 	@Column(name = "senha")
 	private String senha;
 	
+	@Column(name = "isAdmin")
+	private boolean isAdmin;
+	
+	@Column(name = "email")
+	private String email;
 	public Usuario() {}
 	
-	public Usuario(String nome, String senha) {
+	public Usuario(String nome, String senha, boolean isAdmin, String email) {
 		this.nome = nome;
 		this.senha = senha;
+		this.isAdmin = isAdmin;
+		this.email = email;
+	}
+
+	public boolean isAdmin() {
+		return isAdmin;
+	}
+
+	public void setAdmin(boolean isAdmin) {
+		this.isAdmin = isAdmin;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public Integer getId() {
@@ -55,5 +78,4 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-	
 }

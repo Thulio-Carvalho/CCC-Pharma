@@ -24,7 +24,6 @@ public class Login {
 	}
 
 	public Login(String nome, String senha) {
-		super();
 		this.nome = nome;
 		this.senha = senha;
 	}

@@ -20,6 +20,7 @@ public class UsuarioService {
 		return this.usuarioRepository.findById(id).get();
 	}
 	
+	
 	public Usuario add(Usuario usuario) {
 		return this.usuarioRepository.save(usuario);
 	}
@@ -31,7 +32,6 @@ public class UsuarioService {
 			novoUsuario.setNome(usuario.getNome());
 			novoUsuario.setSenha(usuario.getSenha());
 		}
-		
 		
 		return novoUsuario;
 	}
@@ -47,6 +47,7 @@ public class UsuarioService {
 		return false;
 		
 	}
+	
 	public List<Usuario> getUsuarioByNome(String nome) {
 		return this.usuarioRepository.findAllByNome(nome);
 	}

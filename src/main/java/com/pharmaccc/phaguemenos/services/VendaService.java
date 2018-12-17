@@ -3,11 +3,12 @@ package com.pharmaccc.phaguemenos.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.pharmaccc.phaguemenos.model.Venda;
 import com.pharmaccc.phaguemenos.repository.VendaRepository;
 
-
+@Service
 public class VendaService {
 	@Autowired
 	private VendaRepository vendaRepository;
@@ -16,7 +17,6 @@ public class VendaService {
 		return this.vendaRepository.findAll();
 	}
 	public Venda getVendaById(Integer id) {
-		//Optional<Usuario> usuario = this.usuarioRepository.findById(id);	
 		return this.vendaRepository.findById(id).get();
 	}
 	

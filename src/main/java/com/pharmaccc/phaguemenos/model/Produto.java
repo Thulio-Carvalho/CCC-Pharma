@@ -3,11 +3,13 @@ package com.pharmaccc.phaguemenos.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
-
+import com.pharmaccc.phaguemenos.model.Venda;
+import java.util.List;
 
 import javax.persistence.Column;
 
@@ -33,6 +35,8 @@ public class Produto {
 	@Column(name = "fabricante")
 	private String fabricante;
 	
+	@ManyToMany(mappedBy="produtos")
+	private List<Venda> vendas;
 	
 	@Column(name = "preco")
 	private Double preco;
@@ -98,6 +102,14 @@ public class Produto {
 
 	public void setCodigo(String codigo) {
 		this.codigo = codigo;
+	}
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
 	}
 		
 }

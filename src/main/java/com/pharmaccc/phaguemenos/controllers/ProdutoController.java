@@ -29,11 +29,6 @@ public class ProdutoController {
 	@Autowired
 	ProdutoService produtoService;
 	
-//	@RequestMapping(method = RequestMethod.GET)
-//	public String produtoController() {
-//		return "Controller Produto ok!";
-//	}
-	
 	@GetMapping
 	public List<Produto> getAll() {
 		return this.produtoService.getAllProdutos();
