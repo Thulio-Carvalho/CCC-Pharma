@@ -9,6 +9,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,11 +28,6 @@ import com.pharmaccc.phaguemenos.services.ProdutoService;
 public class ProdutoController {
 	@Autowired
 	ProdutoService produtoService;
-	
-//	@RequestMapping(method = RequestMethod.GET)
-//	public String produtoController() {
-//		return "Controller Produto ok!";
-//	}
 	
 	@GetMapping
 	public List<Produto> getAll() {
@@ -62,6 +58,19 @@ public class ProdutoController {
 			return ResponseEntity.notFound().build();
 		}
 		return ResponseEntity.ok(produto);
+	}
+	
+	@DeleteMapping("/{id}")
+	public ResponseEntity<Void> remover(@PathVariable Long id) {
+		Produto produto = Produto.getOne(id);
+		
+		if (produto == null) {
+			return ResponseEntity.notFound().build();
+		}
+		
+		Produto.delete(produto);
+		
+		return ResponseEntity.noContent().build();
 	}
 	
 }

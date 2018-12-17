@@ -20,8 +20,8 @@ public class AdministradorService {
 		return this.administradorRepository.findById(id).get();
 	}
 	
-	public void save(Administrador administrador) {
-		this.administradorRepository.save(administrador);
+	public Administrador save(Administrador administrador) {
+		return this.administradorRepository.save(administrador);
 	}
 	
 	public Administrador update(Administrador administrador, Integer id) {

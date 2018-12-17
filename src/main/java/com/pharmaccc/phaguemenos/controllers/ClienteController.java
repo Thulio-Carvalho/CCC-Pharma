@@ -7,6 +7,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,11 +27,6 @@ public class ClienteController {
 	@Autowired
 	ClienteService clienteService;
 	
-//	@RequestMapping(method = RequestMethod.GET)
-//	public String clienteController() {
-//		return "Controller Cliente ok!";
-//	}
-	
 	@GetMapping
 	public List<Cliente> getAll() {
 		return this.clienteService.getAllClientes();
@@ -38,13 +34,13 @@ public class ClienteController {
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<Cliente> getProdutoById(@PathVariable Integer id){
-		Cliente produto = this.clienteService.getClienteById(id);
+		Cliente cliente = this.clienteService.getClienteById(id);
 		
-		if(produto == null) {
+		if(cliente == null) {
 			return ResponseEntity.notFound().build();
 		}
 		
-		return ResponseEntity.ok(produto);
+		return ResponseEntity.ok(cliente);
 	}
 	
 	@PostMapping
@@ -62,5 +58,16 @@ public class ClienteController {
 		return ResponseEntity.ok(produto);
 	}
 	
-
+	@DeleteMapping("/{id}")
+	public ResponseEntity<Void> remover(@PathVariable Long id) {
+		Usuario usuario  = usuario.getOne(id);
+		
+		if (usuario == null) {
+			return ResponseEntity.notFound().build();
+		}
+		
+		usuario.delete(usuario);
+		
+		return ResponseEntity.noContent().build();
+	}
 }
