@@ -61,8 +61,8 @@ public class ProdutoController {
 	}
 	
 	@DeleteMapping("/{id}")
-	public ResponseEntity<Void> remover(@PathVariable Long id) {
-		Produto produto = produto.getOne(id);
+	public ResponseEntity<Void> remover(@PathVariable Integer id) {
+		Produto produto = produtoService.getProdutoById(id);
 		
 		if (produto == null) {
 			return ResponseEntity.notFound().build();

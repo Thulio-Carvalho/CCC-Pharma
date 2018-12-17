@@ -93,5 +93,9 @@ public class Produto {
 	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
+
+	public void delete(Produto produto) {
+		// TODO DOUG DEVE IMPLEMENTAR
+	}
 		
 }
