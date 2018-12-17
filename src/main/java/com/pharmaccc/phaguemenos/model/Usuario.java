@@ -10,12 +10,12 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.Column;
 
 @Entity
-@Table(name = "tb_cliente")
-public class Cliente {
+@Table(name = "tb_usuario")
+public class Usuario {
 	@Id
 	@GeneratedValue(generator = "increment")
 	@GenericGenerator(name = "increment", strategy = "increment")
-	@Column(name = "id_cliente")
+	@Column(name = "id_usuario")
 	private Integer id;
 	
 	@Column(name = "nome")
@@ -24,9 +24,9 @@ public class Cliente {
 	@Column(name = "senha")
 	private String senha;
 	
-	public Cliente() {}
+	public Usuario() {}
 	
-	public Cliente(String nome, String senha) {
+	public Usuario(String nome, String senha) {
 		this.nome = nome;
 		this.senha = senha;
 	}
@@ -53,6 +53,11 @@ public class Cliente {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+
+	public void delete(Usuario usuario) {
+		// TODO DOUG DEVE IMPLEMENTAR
+		
 	}
 	
 }
