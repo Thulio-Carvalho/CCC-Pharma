@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pharmaccc.phaguemenos.services.UsuarioService;
+import com.pharmaccc.phaguemenos.model.Login;
 import com.pharmaccc.phaguemenos.model.Usuario;
 
 @RestController
@@ -29,9 +30,9 @@ public class LoginController {
 	UsuarioService usuarioService;
 
 	@PostMapping
-	public ResponseEntity<Object> fetchUsuario(@Valid @RequestBody Usuario usuarioBody) {
-		String nome = usuarioBody.getNome();
-		String senha = usuarioBody.getSenha();
+	public ResponseEntity<Object> fetchUsuario(@Valid @RequestBody Login loginBody) {
+		String nome = loginBody.getNome();
+		String senha = loginBody.getSenha();
 
 		List<Usuario> usuarios = this.usuarioService.getUsuarioByNome(nome);
 
