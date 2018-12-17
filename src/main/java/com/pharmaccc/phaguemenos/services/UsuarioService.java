@@ -17,7 +17,6 @@ public class UsuarioService {
 		return this.usuarioRepository.findAll();
 	}
 	public Usuario getUsuarioById(Integer id) {
-		//Optional<Usuario> usuario = this.usuarioRepository.findById(id);	
 		return this.usuarioRepository.findById(id).get();
 	}
 	
@@ -28,8 +27,11 @@ public class UsuarioService {
 	public Usuario update(Integer id, Usuario usuario) {
 		Usuario novoUsuario = this.usuarioRepository.findById(id).get();
 		
-		novoUsuario.setNome(usuario.getNome());
-		novoUsuario.setSenha(usuario.getSenha());
+		if(novoUsuario != null) {
+			novoUsuario.setNome(usuario.getNome());
+			novoUsuario.setSenha(usuario.getSenha());
+		}
+		
 		
 		return novoUsuario;
 	}
@@ -44,8 +46,5 @@ public class UsuarioService {
 		
 		return false;
 		
-	}
-	public List<Usuario> getUsuarioByNome(String nome) {
-		return this.usuarioRepository.findByNome(nome);
 	}
 }

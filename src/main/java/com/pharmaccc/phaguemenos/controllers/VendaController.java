@@ -13,9 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.pharmaccc.phaguemenos.model.Produto;
 import com.pharmaccc.phaguemenos.model.Venda;
-import com.pharmaccc.phaguemenos.services.vendaService;
+import com.pharmaccc.phaguemenos.services.VendaService;
 
 public class VendaController {
 	@Autowired
@@ -39,13 +38,13 @@ public class VendaController {
 	
 	@PostMapping
 	public ResponseEntity<Venda> add(@Valid @RequestBody Venda vendaBody){
-		Venda venda = this.vendaService.save(vendaBody);
+		Venda venda = this.vendaService.add(vendaBody);
 		return ResponseEntity.ok(venda);
 	}
 	
 	@PutMapping("/{id}")
 	public ResponseEntity<Venda> update(@PathVariable Integer id, @Valid @RequestBody Venda vendaBody){
-		Venda venda = this.vendaService.update(vendaBody, id);
+		Venda venda = this.vendaService.update(id, vendaBody);
 		if(venda == null) {
 			return ResponseEntity.notFound().build();
 		}
@@ -54,13 +53,11 @@ public class VendaController {
 	
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Void> remover(@PathVariable Integer id) {
-		Venda venda = venda.getVendaById(id);
+		boolean t = this.vendaService.remover(id);
 		
-		if (venda == null) {
+		if (!t) {
 			return ResponseEntity.notFound().build();
 		}
-		
-		venda.delete(venda);
 		
 		return ResponseEntity.noContent().build();
 	}

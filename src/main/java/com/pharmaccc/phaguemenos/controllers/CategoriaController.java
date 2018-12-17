@@ -14,9 +14,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.pharmaccc.phaguemenos.model.Categoria;
-import com.pharmaccc.phaguemenos.model.Produto;
-import com.pharmaccc.phaguemenos.model.Categoria;
-import com.pharmaccc.phaguemenos.services.CategoriaService;
 import com.pharmaccc.phaguemenos.services.CategoriaService;
 
 public class CategoriaController {
@@ -49,22 +46,20 @@ public class CategoriaController {
 	
 	@PutMapping("/{id}")
 	public ResponseEntity<Categoria> update(@PathVariable Integer id, @Valid @RequestBody Categoria categoriaBody){
-		Categoria produto = this.categoriaService.update(id, categoriaBody);
-		if(produto == null) {
+		Categoria categoria = this.categoriaService.update(id, categoriaBody);
+		if(categoria == null) {
 			return ResponseEntity.notFound().build();
 		}
-		return ResponseEntity.ok(produto);
+		return ResponseEntity.ok(categoria);
 	}
 	
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Void> remover(@PathVariable Integer id) {
-		Venda venda = venda.getCategoriaById(id);
+		boolean t = this.categoriaService.remover(id);
 		
-		if (venda == null) {
+		if (!t) {
 			return ResponseEntity.notFound().build();
 		}
-		
-		venda.delete(venda);
 		
 		return ResponseEntity.noContent().build();
 	}
